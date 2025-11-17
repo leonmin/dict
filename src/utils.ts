@@ -10,8 +10,8 @@ export const describeResult = (item: DictItem): string => {
     descStr += '\n'
     descStr += explains.join('\n')
   }
-  if (word && word.includes(' ') && translation && translation.length > 0) {
-    descStr += '\n'
+  if (translation && translation.length > 0) {
+    descStr += ': '
     descStr += translation.join('\n')
   }
 
@@ -27,7 +27,7 @@ export const describeResult = (item: DictItem): string => {
       '\n' +
       Array.from(wfs, (o: DictMaps) => `[${o.name}] ${o.value}`).join('\n')
   }
-  return `${word}${symbol}${descStr}${webStr}${wfsStr}`
+  return `${word || ''}${symbol || ''}${descStr || ''}${webStr || ''}${wfsStr || ''}`
 }
 
 export const format = (res: any): DictItem => {

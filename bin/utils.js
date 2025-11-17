@@ -6,8 +6,8 @@ export const describeResult = (item) => {
         descStr += '\n';
         descStr += explains.join('\n');
     }
-    if (word && word.includes(' ') && translation && translation.length > 0) {
-        descStr += '\n';
+    if (translation && translation.length > 0) {
+        descStr += ': ';
         descStr += translation.join('\n');
     }
     if (web && web.length > 0) {
@@ -20,7 +20,7 @@ export const describeResult = (item) => {
             '\n' +
                 Array.from(wfs, (o) => `[${o.name}] ${o.value}`).join('\n');
     }
-    return `${word}${symbol}${descStr}${webStr}${wfsStr}`;
+    return `${word || ''}${symbol || ''}${descStr || ''}${webStr || ''}${wfsStr || ''}`;
 };
 export const format = (res) => {
     const { translation = [], basic = {}, query = '', web = [] } = res;
