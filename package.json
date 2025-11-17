@@ -1,6 +1,6 @@
 {
   "name": "@leonmin/dict",
-  "version": "0.0.1",
+  "version": "2.0.1",
   "description": "translate by cli",
   "main": "bin/index.js",
   "scripts": {
